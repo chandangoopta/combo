@@ -1,9 +1,8 @@
-Combination
+combo - all possible combination
 
 http://en.wikipedia.org/wiki/Combination
 
-Show the combinations that you can make with
-	i.e. "abc" 9 combinations => abc,acb,bac,bca...
+i.e. "abc" 6 combinations => abc,acb,bac,bca...
 
 n!/{k!(n-k)!}
 

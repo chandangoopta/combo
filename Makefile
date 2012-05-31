@@ -1,7 +1,7 @@
-all: main.cpp
-	g++ -c main.cpp
-	g++ main.o -o combination
+all: main.c
+	gcc -c main.c
+	gcc main.o -o combo
 
 clean:
-	rm main.o combination
+	rm main.o combo
 
