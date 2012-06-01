@@ -16,10 +16,12 @@ int swap(char *tekst, int pos, int npos){
 }
 
 int findcombo(char *tekst, int pos){
-	char *tmpstr;
 	int counter=1;
 	int npos=pos;
-	int fact=fac(strlen(tekst)-pos);
+	int len=strlen(tekst);
+	int fact=fac(len-pos); //calculate no of combination.
+	char *tmpstr=calloc(sizeof(char), len-pos);
+
 	while(counter<=fact) {
 		if(pos<(strlen(tekst)-1)) pos++;
 		if(fact>2){
@@ -31,9 +33,10 @@ int findcombo(char *tekst, int pos){
 		else {
 			counter++;
 			swap(tekst,npos,pos);
-			printf("%s\n", tekst);
+			printf("%s ", tekst);
 		}
 	}
+	free(tmpstr);
 	return fact;
 }
 
@@ -46,13 +49,11 @@ int main (int argc, char const* argv[])
     }
 
 	int len=strlen(argv[1]);
-	printf("Combination: %ld\n", fac(len));
-/*	char *test=calloc(sizeof(char), len+1);*/
-/*	printf("%d",sizeof(test));*/
-/*	strcpy(test, argv[1]);*/
-/*	printf("<%s>\n", test);*/
-	findcombo(argv[1],0);
-/*	free(test);*/
-	return 0;
+	char *str=calloc(sizeof(char), len+1);
+	strcpy(str, argv[1]);
+	findcombo(str,0);
+	free(str);
+	printf("\n");
+	return fac(len);
 }
 

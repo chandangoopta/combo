@@ -1,8 +1,6 @@
 combo - all possible combination
 
 http://en.wikipedia.org/wiki/Combination
-
 i.e. "abc" 6 combinations => abc,acb,bac,bca...
-
 n!/{k!(n-k)!}
 
